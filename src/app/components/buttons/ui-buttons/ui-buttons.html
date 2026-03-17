@@ -1,0 +1,11 @@
+<button [class]="getClasses()" [disabled]="disabled || loading">
+  <ng-container *ngIf="loading">
+    <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+    <span class="opacity-75">Loading...</span>
+  </ng-container>
+
+  <ng-container *ngIf="!loading">
+    {{ text }}
+    <ng-content></ng-content>
+  </ng-container>
+</button>

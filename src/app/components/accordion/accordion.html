@@ -1,0 +1,169 @@
+<card-gallery
+  [componentDetails]="selectedComponent"
+  [showImage]="false"
+  [showName]="true"
+  [showDescription]="true"
+  [showLink]="false"
+  customClass="component_page"
+>
+</card-gallery>
+
+<hr class="my-5" />
+
+<div class="whentouse">
+  <div class="h2">Usage Rules</div>
+  <ul class="markdown">
+    <li>Hide dense information. Keep the default view clean.</li>
+    <li>Group related content into logical sections.</li>
+    <li>Use strict, explicit labels. No ambiguous titles.</li>
+  </ul>
+</div>
+
+<hr class="my-5" />
+
+<div>
+  <div class="h2 mb-3">Variants</div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">The Gatekeeper</p>
+      <p class="text-secondary">
+        <strong>Default:</strong> One in, everyone else out. It keeps things tidy by only allowing
+        one panel open at a time.
+      </p>
+    </div>
+    <div class="card-body">
+      <ui-accordion [items]="['Legacy Monolith', 'Microservices', 'Technical Debt']"></ui-accordion>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">Social Distancing</p>
+      <p class="text-secondary">
+        <strong>Spaced:</strong> Giving your content some breathing room with physical gaps between
+        every panel.
+      </p>
+    </div>
+    <div class="card-body">
+      <ui-accordion
+        [variants]="'spaced'"
+        [items]="['Legacy Monolith', 'Microservices', 'Technical Debt']"
+      ></ui-accordion>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">The Minimalist</p>
+      <p class="text-secondary">
+        <strong>Borderless:</strong> Clean, sleek, and seamless. No borders or backgrounds to
+        distract from what matters.
+      </p>
+    </div>
+    <div class="card-body">
+      <ui-accordion
+        variants="borderless"
+        [items]="['Legacy Monolith', 'Microservices', 'Technical Debt']"
+      ></ui-accordion>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">Hidden Secrets</p>
+      <p class="text-secondary">
+        <strong>No Arrow:</strong> Hiding the chevron icon for a cleaner look. Users will have to
+        click to find the treasure.
+      </p>
+    </div>
+    <div class="card-body">
+      <ui-accordion
+        [items]="['Legacy Monolith', 'Microservices', 'Technical Debt']"
+        [showArrow]="false"
+      ></ui-accordion>
+    </div>
+  </div>
+</div>
+
+<hr class="my-5" />
+
+<app-code-copy [content]="dynamicVariable"></app-code-copy>
+
+<hr class="my-5" />
+
+<div>
+  <div>
+    <div class="h2 mb-3">HTML Attributes</div>
+    <div class="table-responsive">
+      <table class="table table-hover attributes_table">
+        <thead>
+          <tr>
+            <th>Prop name</th>
+            <th>Type</th>
+            <th>Accepted Values</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>[customClass]</code></td>
+            <td><code>string</code></td>
+            <td><em>Any valid CSS class string</em></td>
+            <td><code>''</code></td>
+            <td>Applies custom CSS classes to the root accordion element.</td>
+          </tr>
+          <tr>
+            <td><code>[closeOthers]</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true | false</code></td>
+            <td><code>true</code></td>
+            <td>
+              If <code>true</code>, opening one accordion item will automatically close all other
+              open items.
+            </td>
+          </tr>
+          <tr>
+            <td><code>[variants]</code></td>
+            <td><code>string</code></td>
+            <td><code>'spaced' | 'borderless' | ''</code></td>
+            <td><code>''</code></td>
+            <td>Applies custom structural CSS variants to alter the accordion's appearance.</td>
+          </tr>
+          <tr>
+            <td><code>[showArrow]</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true | false</code></td>
+            <td><code>true</code></td>
+            <td>
+              If <code>false</code>, hides the default expand/collapse arrow icon on the right side
+              of the accordion header.
+            </td>
+          </tr>
+          <tr>
+            <td><code>[items]</code></td>
+            <td><code>string[]</code></td>
+            <td><em>Array of strings</em></td>
+            <td><code>[]</code></td>
+            <td>An array of strings used to dynamically generate the accordion item headers.</td>
+          </tr>
+          <tr>
+            <td><code>[activeItem]</code></td>
+            <td><code>string</code></td>
+            <td>
+              <em>Matches any string in <code>[items]</code></em>
+            </td>
+            <td><code>''</code></td>
+            <td>
+              The name of the item that should be expanded by default. If left blank, it
+              automatically defaults to the first item in the array.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<app-developer-feedback></app-developer-feedback>

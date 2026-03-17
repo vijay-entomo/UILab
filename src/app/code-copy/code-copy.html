@@ -1,0 +1,34 @@
+<div class="codeCopy">
+  <pre [innerHTML]="content | syntaxHighlight"></pre>
+
+  <button
+    type="button"
+    class="copy-btn"
+    (click)="copyToClipboard()"
+    [ngbTooltip]="isClicked ? '' : 'Copy Code'"
+    container="body"
+    placement="top"
+  >
+    <svg
+      [class.funky-pop]="isClicked"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      fill="#ffffff"
+    >
+      <g>
+        <path
+          d="M8,17C8,17,8,17,8,17c-5.1-0.3-6-2.6-6-7.5C2,3.6,3.6,2,9.5,2c4.8,0,7.2,0.9,7.5,5.9C17,8.5,16.6,9,16,9 c-0.6,0-1-0.4-1.1-0.9C14.8,4.8,14.1,4,9.5,4C4.7,4,4,4.7,4,9.5c0,4.6,0.8,5.3,4.1,5.5C8.6,15,9,15.5,9,16C9,16.6,8.5,17,8,17z"
+        ></path>
+      </g>
+      <g>
+        <path
+          d="M14.5,22C8.6,22,7,20.4,7,14.5S8.6,7,14.5,7S22,8.6,22,14.5S20.4,22,14.5,22z M14.5,9C9.7,9,9,9.7,9,14.5 S9.7,20,14.5,20s5.5-0.7,5.5-5.5S19.3,9,14.5,9z"
+        ></path>
+      </g>
+    </svg>
+
+    <span class="copy-text" *ngIf="isClicked">Code Copied!</span>
+  </button>
+</div>

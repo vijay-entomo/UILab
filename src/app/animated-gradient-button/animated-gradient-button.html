@@ -1,0 +1,70 @@
+<button
+  #buttonEl
+  class="button-gradient"
+  [attr.type]="type"
+  (click)="onClick()"
+  (pointerenter)="onPointerEnter()"
+  (pointerleave)="onPointerLeave()"
+  (pointermove)="onPointerMove($event)"
+>
+  <span class="btn-content">
+    <svg
+      class="btn-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <g clip-path="url(#downloadClip)">
+        <path
+          d="M12 3.77002V15.26"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+        />
+        <path
+          d="M8.73999 12L12 15.26L15.26 12"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M2.75 15.0801L3.90002 17.9601C4.40002 19.2001 5.89999 20.2201 7.23999 20.2201H16.76C18.1 20.2201 19.6 19.2001 20.1 17.9601L21.25 15.0801"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="downloadClip">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+
+    <span>{{ label }}</span>
+  </span>
+
+  <span class="border"></span>
+  <span class="gradient-0"></span>
+  <span class="gradient-1"></span>
+  <span class="glass"></span>
+
+  <span class="gradient-2">
+    @for (blob of blobs; track $index) {
+      <span
+        #blobEl
+        class="color"
+        [style.width.px]="blob.size"
+        [style.height.px]="blob.size"
+        [style.background]="blob.color"
+      ></span>
+    }
+  </span>
+</button>

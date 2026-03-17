@@ -1,0 +1,73 @@
+<card-gallery
+  [componentDetails]="selectedComponent"
+  [showImage]="false"
+  [showName]="true"
+  [showDescription]="true"
+  [showLink]="false"
+  customClass="component_page"
+>
+</card-gallery>
+
+<hr class="my-5" />
+
+<div class="whentouse">
+  <div class="h2">Usage Rules</div>
+  <ul class="markdown">
+    <li>Limit content to one specific topic per card.</li>
+    <li>Include a clear primary action if interactive.</li>
+    <li>Do not nest cards inside other cards.</li>
+    <li>Maintain consistent padding and structural borders.</li>
+  </ul>
+</div>
+
+<hr class="my-5" />
+
+<div>
+  <div class="h2 mb-3">Variants</div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">The Basic Issue</p>
+      <p class="text-secondary">
+        A simple, standard Bootstrap card that encapsulates grouped information cleanly.
+      </p>
+    </div>
+    <div class="card-body">
+      <ui-card></ui-card>
+    </div>
+  </div>
+</div>
+
+<hr class="my-5" />
+
+<app-code-copy [content]="dynamicVariable"></app-code-copy>
+
+<hr class="my-5" />
+
+<div>
+  <div class="h2 mb-3 mt-5">HTML Attributes</div>
+  <div class="table-responsive">
+    <table class="table attributes_table mb-5">
+      <thead>
+        <tr>
+          <th>Prop name</th>
+          <th>Type</th>
+          <th>Accepted Values</th>
+          <th>Default</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>[customClass]</code></td>
+          <td><code>string</code></td>
+          <td><em>Any valid CSS class</em></td>
+          <td><code>''</code></td>
+          <td>Applies custom CSS classes directly to the card wrapper element.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<app-developer-feedback></app-developer-feedback>

@@ -1,0 +1,33 @@
+<div class="hero_section">
+  <div class="container">
+    <app-color-text></app-color-text>
+    <p class="text-2xl mt-3">
+      <app-typewriter [text]="typewritertext" [speed]="40" [animate]="true"></app-typewriter>
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <ul class="componet_gallery">
+    <li
+      class="special-cursor animate-card"
+      *ngFor="let componentDetails of componentsData; let i = index"
+      appScrollAnimate
+      [style.--delay]="(i % 4) * 150 + 'ms'"
+    >
+      <card-gallery
+        [componentDetails]="componentDetails"
+        [showImage]="true"
+        [showName]="true"
+        [showDescription]="true"
+        [showLink]="true"
+        customClass="card-wrapper"
+      >
+      </card-gallery>
+    </li>
+  </ul>
+</div>
+
+<app-interactive-grid>
+  <div style="height: 120px;"></div>
+</app-interactive-grid>

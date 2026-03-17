@@ -1,0 +1,101 @@
+.badge {
+  --bs-badge-padding-x: 0.65em;
+  --bs-badge-padding-y: 0.35em;
+  --bs-badge-font-size: 0.75em;
+  --bs-badge-font-weight: 500;
+  --bs-badge-color: #fff;
+  --bs-badge-border-radius: 100vw;
+  display: inline-block;
+  padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+  font-size: var(--bs-badge-font-size);
+  font-weight: var(--bs-badge-font-weight);
+  line-height: 1;
+  color: var(--bs-badge-color);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: var(--bs-badge-border-radius);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ui-badge-primary {
+  --badge-color: var(--ui-primary-text);
+  --badge-bg: var(--ui-primary-bg);
+}
+.ui-badge-success {
+  --badge-color: var(--ui-success-text);
+  --badge-bg: var(--ui-success-bg);
+}
+.ui-badge-warning {
+  --badge-color: var(--ui-warning-text);
+  --badge-bg: var(--ui-warning-bg);
+}
+.ui-badge-danger {
+  --badge-color: var(--ui-danger-text);
+  --badge-bg: var(--ui-danger-bg);
+}
+.ui-badge-info {
+  --badge-color: var(--ui-info-text);
+  --badge-bg: var(--ui-info-bg);
+}
+.ui-badge-light {
+  --badge-color: var(--ui-light-text);
+  --badge-bg: var(--ui-light-bg);
+}
+.ui-badge-dark {
+  --badge-color: var(--ui-dark-text);
+  --badge-bg: var(--ui-dark-bg);
+}
+
+.ui-badge-fill {
+  background-color: var(--badge-bg);
+  color: var(--badge-color);
+  border: 1px solid transparent;
+}
+
+.ui-badge-outline {
+  background-color: transparent;
+  color: var(--badge-color);
+  border: 1px solid var(--badge-color);
+}
+
+.ui-badge-dot {
+  display: inline-block; /* FORCES the shape to render */
+  width: 0.45em;
+  height: 0.45em;
+  border-radius: 50%;
+  background-color: currentColor;
+  flex-shrink: 0;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.ui-badge-radius {
+  border-radius: var(--bs-border-radius);
+}
+
+.ui-badge-md {
+  font-size: calc(1rem - 2px);
+}
+
+.ui-badge-md {
+  font-size: 1rem;
+}
+
+.ui-badge-lg {
+  font-size: calc(1rem + 2px);
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}

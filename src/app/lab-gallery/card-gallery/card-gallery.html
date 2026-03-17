@@ -1,0 +1,33 @@
+<div
+  class="{{ customClass }}"
+  [routerLink]="showLink && componentDetails.routerLink ? '/' + componentDetails.routerLink : null"
+  [queryParams]="{ animate: true }"
+  routerLinkActive="active"
+>
+  <div class="image-container" *ngIf="showImage && componentDetails.componentImage">
+    <img
+      [src]="'assets/images/component/' + componentDetails.componentImage"
+      [alt]="componentDetails.componentName"
+      class="card-image"
+    />
+  </div>
+
+  <app-back-button style="display: none"></app-back-button>
+  <div class="component_section">
+    <div class="component_name" *ngIf="showName">{{ componentDetails.componentName }}</div>
+    <p class="component_description" *ngIf="showDescription">
+      <app-typewriter
+        text="{{ componentDetails.componentDescription }}"
+        [speed]="40"
+        [animate]="shouldAnimate"
+      ></app-typewriter>
+    </p>
+  </div>
+  <!-- <a
+    *ngIf="showLink && componentDetails.routerLink"
+    [routerLink]="componentDetails.routerLink"
+    class="btn btn-primary mt-2"
+  >
+    View Component
+  </a> -->
+</div>

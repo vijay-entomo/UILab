@@ -1,0 +1,69 @@
+.crazy-back-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: none;
+  border-radius: 16px;
+  background: var(--color-1);
+  color: var(--color-2);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background 0.5s ease;
+  margin-bottom: 12px;
+  width: 60px;
+  text-decoration: none;
+}
+
+.crazy-back-btn:hover {
+  transform: scale(1.1) rotate(-2deg);
+  background: var(--color-2);
+  color: var(--color-1);
+}
+
+.text {
+  display: block;
+  transition:
+    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.5s ease;
+  animation: arrow-bounce 0.5s ease-in-out;
+}
+
+.crazy-back-btn:hover .text {
+  transform: translateX(-150%);
+  opacity: 0;
+  display: none;
+}
+
+.arrow {
+  transform: translateX(-200%) rotate(-45deg);
+  opacity: 0;
+  transition:
+    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.5s ease;
+  display: none;
+}
+
+.crazy-back-btn:hover .arrow {
+  transform: translateX(0) rotate(0deg);
+  opacity: 1;
+  animation: arrow-bounce 0.5s ease-in-out;
+  display: block;
+}
+
+/* Arrow bounce keyframes */
+@keyframes arrow-bounce {
+  0% {
+    transform: translateX(100%) rotate(-10deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(5deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}

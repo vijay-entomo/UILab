@@ -1,0 +1,19 @@
+<div class="loader-wrapper" *ngIf="!isHidden()">
+  
+  <div class="panel panel-top" [class.open]="isLoaded()"></div>
+  <div class="panel panel-bottom" [class.open]="isLoaded()"></div>
+
+  <div class="progress-container" [class.fade-out]="isLoaded()">
+    <div class="percentage" [style.color]="currentColor()">
+      <div class="reel-container">
+        <div class="reel" [style.transform]="'translateY(-' + (progress() > 100 ? 100 : progress()) + 'em)'">
+          @for (num of numbers; track num) {
+            <div class="reel-number">{{ num }}</div>
+          }
+        </div>
+      </div>
+      <div>%</div>
+    </div>
+  </div>
+  
+</div>

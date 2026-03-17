@@ -1,0 +1,169 @@
+<card-gallery
+  [componentDetails]="selectedComponent"
+  [showImage]="false"
+  [showName]="true"
+  [showDescription]="true"
+  [showLink]="false"
+  customClass="component_page"
+>
+</card-gallery>
+<hr class="my-5" />
+
+<div class="whentouse">
+  <div class="h2">Usage Rules</div>
+  <ul class="markdown">
+    <li>Push content down. Do not float over it.</li>
+    <li>Keep text under two lines.</li>
+    <li>Match color and icon to severity.</li>
+    <li>Use for persistent system states, not temporary feedback.</li>
+  </ul>
+</div>
+
+<hr class="my-5" />
+
+<div>
+  <div class="h2 mb-3">Variants</div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">The More You Know</p>
+      <p class="text-secondary">
+        Just some friendly neighborhood data passing through. No pressure to act.
+      </p>
+    </div>
+    <div class="card-body">
+      <ui-alerts type="info">
+        <strong>Info:</strong> Neutral context. No action needed (unless you want to).
+      </ui-alerts>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">High Five!</p>
+      <p class="text-secondary">
+        Everything is coming up roses. You did the thing, and you did it well.
+      </p>
+    </div>
+    <div class="card-body">
+      <ui-alerts type="success">
+        <strong>Success:</strong> Mission accomplished! Grab a coffee, you earned it.
+      </ui-alerts>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">Yellow Flag</p>
+      <p class="text-secondary">
+        Hold your horses! Nothing is broken yet, but we should keep an eye on this.
+      </p>
+    </div>
+    <div class="card-body">
+      <ui-alerts type="warning">
+        <strong>Warning:</strong> Proceed with caution. Like eating pizza right out of the oven.
+      </ui-alerts>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">Big Red Button</p>
+      <p class="text-secondary">
+        Houston, we have a problem. Something needs your attention right now.
+      </p>
+    </div>
+    <div class="card-body">
+      <ui-alerts type="danger">
+        <strong>Danger:</strong> Abandon ship! (Or just fix the error, that works too).
+      </ui-alerts>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">Free Spirit</p>
+      <p class="text-secondary">
+        I’m an alert that refuses to be boxed in. Clean, sleek, and boundary-free.
+      </p>
+    </div>
+    <div class="card-body">
+      <ui-alerts type="info" [variants]="'borderless'">
+        <strong>Borderless:</strong> I’m an alert without borders. Living life on the edge (literally).
+      </ui-alerts>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">The Ghost</p>
+      <p class="text-secondary">
+        Here for a good time, not a long time. Click the 'X' to send me into the void.
+      </p>
+    </div>
+    <div class="card-body">
+      <ui-alerts type="info" [dismissible]="true">
+        <strong>Dismissible:</strong> Don't like what I have to say? Just make me disappear!
+      </ui-alerts>
+    </div>
+  </div>
+</div>
+
+<hr class="my-5">
+
+<app-code-copy [content]="dynamicVariable"></app-code-copy>
+
+<hr class="my-5">
+
+<div>
+  <div class="h2 mb-3 mt-5">HTML Attributes</div>
+  <div class="table-responsive">
+    <table class="table attributes_table mb-5">
+      <thead>
+        <tr>
+          <th>Prop name</th>
+          <th>Type</th>
+          <th>Accepted Values</th>
+          <th>Default</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>[customClass]</code></td>
+          <td><code>string</code></td>
+          <td><em>Any valid CSS class</em></td>
+          <td><code>''</code></td>
+          <td>Applies custom CSS classes directly to the alert wrapper element.</td>
+        </tr>
+        <tr>
+          <td><code>[type]</code></td>
+          <td><code>string</code></td>
+          <td><code>'success' | 'info' | 'warning' | 'danger'</code></td>
+          <td><code>'info'</code></td>
+          <td>Determines the contextual color and styling of the alert.</td>
+        </tr>
+        <tr>
+          <td><code>[dismissible]</code></td>
+          <td><code>boolean</code></td>
+          <td><code>true | false</code></td>
+          <td><code>false</code></td>
+          <td>
+            If <code>true</code>, displays an inline close button that allows the user to dismiss
+            the alert.
+          </td>
+        </tr>
+        <tr>
+          <td><code>[variants]</code></td>
+          <td><code>string</code></td>
+          <td><code>'borderless' | ''</code></td>
+          <td><code>''</code></td>
+          <td>
+            Applies custom structural CSS variants to alter the alert's appearance (e.g., removing
+            the border).
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

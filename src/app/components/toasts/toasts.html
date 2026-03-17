@@ -1,0 +1,250 @@
+<card-gallery
+  [componentDetails]="selectedComponent"
+  [showImage]="false"
+  [showName]="true"
+  [showDescription]="true"
+  [showLink]="false"
+  customClass="component_page"
+>
+</card-gallery>
+
+<hr class="my-5" />
+
+<div class="whentouse">
+  <div class="h2">Usage Rules</div>
+  <ul class="markdown">
+    <li>Use only for non-blocking confirmations.</li>
+    <li>Auto-dismiss after exactly 4 seconds.</li>
+    <li>Stack vertically in a consistent viewport corner.</li>
+    <li>Do not use for system errors that require user intervention.</li>
+  </ul>
+</div>
+
+<hr class="my-5" />
+
+<div>
+  <div class="h2 mb-3">Variants</div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">Semantic Types</p>
+      <p class="text-secondary">Trigger toasts with different semantic meanings and icons.</p>
+    </div>
+    <div class="card-body d-flex flex-wrap gap-3">
+      <button
+        class="btn btn-success"
+        (click)="
+          toastService.show({
+            type: 'success',
+            showProgress: false,
+            title: 'Success!',
+            message: 'Operation completed.',
+          })
+        "
+      >
+        Success
+      </button>
+      <button
+        class="btn btn-warning"
+        (click)="
+          toastService.show({ type: 'warning', title: 'Warning', message: 'Something seems off.' })
+        "
+      >
+        Warning
+      </button>
+      <button
+        class="btn btn-danger"
+        (click)="
+          toastService.show({
+            type: 'error',
+            title: 'Error',
+            message: 'A critical error occurred.',
+          })
+        "
+      >
+        Error
+      </button>
+      <button
+        class="btn btn-info text-white"
+        (click)="
+          toastService.show({ type: 'info', title: 'Info', message: 'Here is some information.' })
+        "
+      >
+        Info
+      </button>
+    </div>
+  </div>
+
+  <div class="card mt-4">
+    <div class="card-header">
+      <p class="h5">Style Variants</p>
+      <p class="text-secondary">Switch up the visual design of the toasts.</p>
+    </div>
+    <div class="card-body d-flex flex-wrap gap-3">
+      <button
+        class="btn btn-primary"
+        (click)="
+          toastService.show({
+            variant: 'default',
+            title: 'Default',
+            message: 'Standard boxed toast.',
+          })
+        "
+      >
+        Default
+      </button>
+      <button
+        class="btn btn-primary"
+        (click)="
+          toastService.show({
+            variant: 'solid',
+            title: 'Solid',
+            message: 'Fully colored background.',
+          })
+        "
+      >
+        Solid
+      </button>
+      <button
+        class="btn btn-primary"
+        (click)="
+          toastService.show({
+            variant: 'minimal',
+            title: 'Minimal',
+            message: 'Clean frosted look.',
+          })
+        "
+      >
+        Minimal
+      </button>
+    </div>
+  </div>
+
+  <div class="card mt-4">
+    <div class="card-header">
+      <p class="h5">Placements</p>
+      <p class="text-secondary">Control which corner of the screen the toast stacks in.</p>
+    </div>
+    <div class="card-body d-flex flex-wrap gap-3">
+      <button
+        class="btn btn-outline-secondary"
+        (click)="
+          toastService.show({
+            placement: 'top-left',
+            title: 'Top Left',
+            message: 'Appearing top left.',
+          })
+        "
+      >
+        Top Left
+      </button>
+      <button
+        class="btn btn-outline-secondary"
+        (click)="
+          toastService.show({
+            placement: 'top-right',
+            title: 'Top Right',
+            message: 'Appearing top right.',
+          })
+        "
+      >
+        Top Right
+      </button>
+      <button
+        class="btn btn-outline-secondary"
+        (click)="
+          toastService.show({
+            placement: 'bottom-left',
+            title: 'Bottom Left',
+            message: 'Appearing bottom left.',
+          })
+        "
+      >
+        Bottom Left
+      </button>
+      <button
+        class="btn btn-outline-secondary"
+        (click)="
+          toastService.show({
+            placement: 'bottom-right',
+            title: 'Bottom Right',
+            message: 'Appearing bottom right.',
+          })
+        "
+      >
+        Bottom Right
+      </button>
+    </div>
+  </div>
+</div>
+
+<hr class="my-5" />
+
+<app-code-copy [content]="dynamicVariable"></app-code-copy>
+
+<hr class="my-5" />
+
+<div>
+  <div>
+    <div class="h2 mb-3">ToastInput Parameters</div>
+    <div class="table-responsive">
+      <table class="table table-hover attributes_table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Accepted Values</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>type</code></td>
+            <td><code>string</code></td>
+            <td><code>'success' | 'warning' | 'error' | 'info'</code></td>
+            <td><code>'info'</code></td>
+            <td>Semantic theme determining colors and icons.</td>
+          </tr>
+          <tr>
+            <td><code>variant</code></td>
+            <td><code>string</code></td>
+            <td><code>'default' | 'solid' | 'minimal'</code></td>
+            <td><code>'default'</code></td>
+            <td>The overall visual styling map of the toast container.</td>
+          </tr>
+          <tr>
+            <td><code>placement</code></td>
+            <td><code>string</code></td>
+            <td><code>'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'</code></td>
+            <td><code>'top-right'</code></td>
+            <td>Which corner the toast overlay sits in.</td>
+          </tr>
+          <tr>
+            <td><code>duration</code></td>
+            <td><code>number</code></td>
+            <td><em>Milliseconds</em></td>
+            <td><code>10000</code></td>
+            <td>Time on screen before auto-dismissal.</td>
+          </tr>
+          <tr>
+            <td><code>stoppable</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true | false</code></td>
+            <td><code>true</code></td>
+            <td>If true, hovering the toast will pause the countdown timer.</td>
+          </tr>
+          <tr>
+            <td><code>showProgress</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true | false</code></td>
+            <td><code>true</code></td>
+            <td>Toggles the shrinking progress bar at the bottom.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<app-developer-feedback></app-developer-feedback>

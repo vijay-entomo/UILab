@@ -1,0 +1,11 @@
+<div class="grid-background" [style.gridTemplateColumns]="'repeat(' + columns() + ', 50px)'">
+  
+  @for (cell of cells(); track cell.id) {
+    <div class="grid-cell" [ngClass]="cell.colorClass"></div>
+  }
+
+</div>
+
+<div class="content-overlay">
+  <ng-content></ng-content>
+</div>

@@ -1,0 +1,248 @@
+<card-gallery
+  [componentDetails]="selectedComponent"
+  [showImage]="false"
+  [showName]="true"
+  [showDescription]="true"
+  [showLink]="false"
+  customClass="component_page"
+>
+</card-gallery>
+
+<hr class="my-5" />
+
+<div class="whentouse">
+  <div class="h2">Usage Rules</div>
+  <ul class="markdown">
+    <li>One or two words maximum. It is a label, not a novel.</li>
+    <li>Read-only. Do not attach click events. If it needs to be clicked, use a button.</li>
+    <li>
+      Cap counters at <code>99+</code>. If a user has 10,000 notifications, they aren't going to
+      read them anyway.
+    </li>
+    <li>Apply sparsely. Do not turn the UI into a Christmas tree of system anxiety.</li>
+  </ul>
+</div>
+
+<hr class="my-5" />
+
+<div>
+  <div class="h2 mb-3">Variants</div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">Mood Rings</p>
+      <p class="text-secondary">
+        Wear your system status on your sleeve. Choose the flavor that best matches the current
+        vibe.
+      </p>
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-center flex-wrap gap-3">
+        <ui-badge [type]="'primary'"> Primary </ui-badge>
+        <ui-badge [type]="'success'"> Success </ui-badge>
+        <ui-badge [type]="'warning'"> Warning </ui-badge>
+        <ui-badge [type]="'danger'"> Danger </ui-badge>
+        <ui-badge [type]="'info'"> Info </ui-badge>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">Diet Badges</p>
+      <p class="text-secondary">
+        All the contextual meaning, half the visual calories. A lighter footprint for when you want
+        to whisper, not shout.
+      </p>
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-center flex-wrap gap-3">
+        <ui-badge [type]="'primary'" [appearance]="'outline'"> Primary </ui-badge>
+        <ui-badge [type]="'success'" [appearance]="'outline'"> Success </ui-badge>
+        <ui-badge [type]="'warning'" [appearance]="'outline'"> Warning </ui-badge>
+        <ui-badge [type]="'danger'" [appearance]="'outline'"> Danger </ui-badge>
+        <ui-badge [type]="'info'" [appearance]="'outline'"> Info </ui-badge>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">Corner Cutting</p>
+      <p class="text-secondary">
+        Standard rounded corners or full pill mode. Because sharp edges are dangerous and we
+        wouldn't want anyone getting hurt.
+      </p>
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-center flex-wrap gap-3">
+        <ui-badge [type]="'primary'" [shape]="'radius'"> Radius </ui-badge>
+        <ui-badge [type]="'primary'" [shape]="'pill'"> Pill </ui-badge>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">Portion Control</p>
+      <p class="text-secondary">
+        Small, medium, or large. Choose the right size for your label's ego.
+      </p>
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-center flex-wrap gap-3">
+        <ui-badge [type]="'primary'" [size]="'sm'"> Small </ui-badge>
+        <ui-badge [type]="'primary'" [size]="'md'"> Medium </ui-badge>
+        <ui-badge [type]="'primary'" [size]="'lg'"> Large </ui-badge>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">The Anxiety Inducer</p>
+      <p class="text-secondary">
+        Slap a pulsating dot on it. Guaranteed to make users look at it just to figure out how to
+        make it stop blinking.
+      </p>
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-center flex-wrap gap-4">
+        <ui-badge [type]="'primary'" [size]="'sm'" [dot]="true"> Primary </ui-badge>
+        <ui-badge [type]="'success'" [appearance]="'outline'" [size]="'sm'" [dot]="true">
+          Primary
+        </ui-badge>
+        <ui-badge [type]="'primary'" [size]="'md'" [dot]="true"> Success </ui-badge>
+        <ui-badge [type]="'success'" [appearance]="'outline'" [size]="'md'" [dot]="true">
+          Success
+        </ui-badge>
+        <ui-badge [type]="'primary'" [size]="'lg'" [dot]="true"> Success </ui-badge>
+        <ui-badge [type]="'success'" [appearance]="'outline'" [size]="'lg'" [dot]="true">
+          Success
+        </ui-badge>
+      </div>
+      <div class="d-flex align-items-center flex-wrap gap-4 mt-4">
+        <ui-badge [type]="'primary'" [shape]="'radius'" [size]="'sm'" [dot]="true">
+          Primary
+        </ui-badge>
+        <ui-badge
+          [type]="'success'"
+          [shape]="'radius'"
+          [appearance]="'outline'"
+          [size]="'sm'"
+          [dot]="true"
+        >
+          Primary
+        </ui-badge>
+        <ui-badge [type]="'primary'" [shape]="'radius'" [size]="'md'" [dot]="true">
+          Success
+        </ui-badge>
+        <ui-badge
+          [type]="'success'"
+          [shape]="'radius'"
+          [appearance]="'outline'"
+          [size]="'md'"
+          [dot]="true"
+        >
+          Success
+        </ui-badge>
+        <ui-badge [type]="'primary'" [shape]="'radius'" [size]="'lg'" [dot]="true">
+          Success
+        </ui-badge>
+        <ui-badge
+          [type]="'success'"
+          [shape]="'radius'"
+          [appearance]="'outline'"
+          [size]="'lg'"
+          [dot]="true"
+        >
+          Success
+        </ui-badge>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="my-5" />
+
+<app-code-copy [content]="dynamicVariable"></app-code-copy>
+
+<hr class="my-5" />
+
+<div>
+  <div class="h2 mb-3 mt-5">HTML Attributes</div>
+  <div class="table-responsive">
+    <table class="table attributes_table mb-5">
+      <thead>
+        <tr>
+          <th>Prop name</th>
+          <th>Type</th>
+          <th>Accepted Values</th>
+          <th>Default</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>[text]</code></td>
+          <td><code>string</code></td>
+          <td><em>Any string</em></td>
+          <td><code>''</code></td>
+          <td>
+            The text content to display inside the badge. (You can also just use standard
+            <code>&lt;ng-content&gt;</code> between the tags).
+          </td>
+        </tr>
+        <tr>
+          <td><code>[type]</code></td>
+          <td><code>string</code></td>
+          <td>
+            <code
+              >'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' |
+              'dark'</code
+            >
+          </td>
+          <td><code>'light'</code></td>
+          <td>Determines the contextual color flavor of the badge. Choose wisely.</td>
+        </tr>
+        <tr>
+          <td><code>[appearance]</code></td>
+          <td><code>string</code></td>
+          <td><code>'fill' | 'outline'</code></td>
+          <td><code>'fill'</code></td>
+          <td>
+            Determines if the badge has a solid background fill or an outlined appearance. Sometimes
+            less is more.
+          </td>
+        </tr>
+        <tr>
+          <td><code>[shape]</code></td>
+          <td><code>string</code></td>
+          <td><code>'pill' | 'radius'</code></td>
+          <td><code>'pill'</code></td>
+          <td>
+            <code>'pill'</code> for perfectly round ends, <code>'radius'</code> if you prefer
+            standard rounded rectangles.
+          </td>
+        </tr>
+        <tr>
+          <td><code>[size]</code></td>
+          <td><code>string</code></td>
+          <td><code>'sm' | 'md' | 'lg'</code></td>
+          <td><code>'md'</code></td>
+          <td>How loud do you want to yell? Changes the font size accordingly.</td>
+        </tr>
+        <tr>
+          <td><code>[dot]</code></td>
+          <td><code>boolean</code></td>
+          <td><code>true | false</code></td>
+          <td><code>false</code></td>
+          <td>
+            If <code>true</code>, slaps a pulsating status dot alongside the text for maximum
+            urgency.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

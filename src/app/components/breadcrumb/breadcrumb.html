@@ -1,0 +1,66 @@
+<card-gallery
+  [componentDetails]="selectedComponent"
+  [showImage]="false"
+  [showName]="true"
+  [showDescription]="true"
+  [showLink]="false"
+  customClass="component_page"
+>
+</card-gallery>
+
+<hr class="my-5" />
+
+<div class="whentouse">
+  <div class="h2">Usage Rules</div>
+  <ul class="markdown">
+    <li>Leave a continuous trail. Map the exact page hierarchy—no teleporting or skipping levels allowed.</li>
+    <li>Kill the final link. That is where the user is standing right now. No Inception-style self-linking.</li>
+    <li>Hide them on mobile if things get cramped. Small screens and long trails do not mix well.</li>
+  </ul>
+</div>
+
+<hr class="my-5" />
+
+<div>
+  <div class="h2 mb-3">Variants</div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">The Hansel & Gretel</p>
+      <p class="text-secondary">The classic, structural path. Follow the separators back home before the birds eat them.</p>
+    </div>
+    <div class="card-body">
+      <ui-breadcrumb></ui-breadcrumb>
+    </div>
+  </div>
+</div>
+
+<hr class="my-5" />
+
+<app-code-copy [content]="dynamicVariable"></app-code-copy>
+
+<hr class="my-5" />
+
+<div>
+  <div class="h2 mb-3 mt-5">HTML Attributes</div>
+  <div class="table-responsive">
+    <table class="table attributes_table mb-5">
+      <thead>
+        <tr>
+          <th>Prop name</th>
+          <th>Type</th>
+          <th>Accepted Values</th>
+          <th>Default</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="5" class="text-center text-secondary py-4">
+            <em>Currently pure, simple, and hardcoded. No <code>@Input()</code> properties defined yet! Just drop the tag and let it ride.</em>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

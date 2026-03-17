@@ -1,0 +1,218 @@
+<card-gallery
+  [componentDetails]="selectedComponent"
+  [showImage]="false"
+  [showName]="true"
+  [showDescription]="true"
+  [showLink]="false"
+  customClass="component_page"
+>
+</card-gallery>
+
+<hr class="my-5" />
+
+<div class="whentouse">
+  <div class="h2">Usage Rules</div>
+  <ul class="markdown">
+    <li>
+      <strong>One primary action per view.</strong> Don't yell at the user with multiple shiny
+      buttons. Tell them exactly what the main task is.
+    </li>
+    <li>
+      <strong>Keep labels action-oriented.</strong> "Save Changes" or "Send Invoice". Avoid vague
+      terms like "Submit" or "Ok".
+    </li>
+    <li>
+      <strong>Show your work.</strong> Always use the loading state when firing off an API call so
+      users don't click "Process Payment" six times.
+    </li>
+    <li>
+      <strong>Make destructive actions scary.</strong> If it deletes data, it gets the red danger
+      treatment. No exceptions.
+    </li>
+  </ul>
+</div>
+
+<hr class="my-5" />
+
+<div>
+  <div class="h2 mb-3">Variants</div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">The Main Event</p>
+      <p class="text-secondary">
+        Solid background fills. Use primary for the absolute most important action on the screen.
+        Use secondary for the backup dancers.
+      </p>
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-center flex-wrap gap-3">
+        <ui-buttons type="primary" text="Save Changes"></ui-buttons>
+        <ui-buttons type="secondary" text="Cancel"></ui-buttons>
+        <ui-buttons type="danger" text="Delete Account"></ui-buttons>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">The Diet Options</p>
+      <p class="text-secondary">
+        When you need a button to exist, but you don't want it stealing the spotlight. Great for
+        secondary actions or toolbar icons.
+      </p>
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-center flex-wrap gap-3">
+        <ui-buttons type="primary" appearance="outline" text="Export CSV"></ui-buttons>
+        <ui-buttons type="secondary" appearance="outline" text="Filter"></ui-buttons>
+        <ui-buttons type="danger" appearance="ghost" text="Clear Form"></ui-buttons>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">The Waiting Game</p>
+      <p class="text-secondary">
+        Instantly disables the button and spins up a loader. Prevents double-submissions and keeps
+        the user's anxiety in check.
+      </p>
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-center flex-wrap gap-3">
+        <ui-buttons type="primary" [loading]="true" text="Processing"></ui-buttons>
+        <ui-buttons
+          type="secondary"
+          appearance="outline"
+          [loading]="true"
+          text="Fetching"
+        ></ui-buttons>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">Size Matters</p>
+      <p class="text-secondary">
+        Small for tight data tables, medium for standard forms, and large for big important hero
+        sections.
+      </p>
+    </div>
+    <div class="card-body">
+      <div class="d-flex align-items-end flex-wrap gap-3">
+        <ui-buttons type="primary" size="sm" text="Small Table Action"></ui-buttons>
+        <ui-buttons type="primary" size="md" text="Standard Form Action"></ui-buttons>
+        <ui-buttons type="primary" size="lg" text="Massive Hero Action"></ui-buttons>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">The Wall-to-Wall</p>
+      <p class="text-secondary">
+        Block level buttons stretch to fill their parent container. Highly recommended for mobile
+        views or narrow sidebars.
+      </p>
+    </div>
+    <div class="card-body" style="max-width: 400px">
+      <ui-buttons type="primary" [block]="true" text="Sign In"></ui-buttons>
+      <div class="mt-2"></div>
+      <ui-buttons
+        type="secondary"
+        appearance="outline"
+        [block]="true"
+        text="Create an Account"
+      ></ui-buttons>
+    </div>
+  </div>
+</div>
+
+<hr class="my-5" />
+
+<app-code-copy [content]="dynamicVariable"></app-code-copy>
+
+<hr class="my-5" />
+
+<div>
+  <div class="h2 mb-3 mt-5">HTML Attributes</div>
+  <div class="table-responsive">
+    <table class="table attributes_table mb-5">
+      <thead>
+        <tr>
+          <th>Prop name</th>
+          <th>Type</th>
+          <th>Accepted Values</th>
+          <th>Default</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>[text]</code></td>
+          <td><code>string</code></td>
+          <td><em>Any string</em></td>
+          <td><code>''</code></td>
+          <td>
+            The label of the button. (You can also use standard <code>&lt;ng-content&gt;</code>).
+          </td>
+        </tr>
+        <tr>
+          <td><code>[type]</code></td>
+          <td><code>string</code></td>
+          <td>
+            <code
+              >'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' |
+              'dark' | 'link'</code
+            >
+          </td>
+          <td><code>'primary'</code></td>
+          <td>The contextual color. Dictates the mood of the action.</td>
+        </tr>
+        <tr>
+          <td><code>[appearance]</code></td>
+          <td><code>string</code></td>
+          <td><code>'solid' | 'outline' | 'ghost'</code></td>
+          <td><code>'solid'</code></td>
+          <td>Solid is loud. Outline is polite. Ghost is a whisper.</td>
+        </tr>
+        <tr>
+          <td><code>[size]</code></td>
+          <td><code>string</code></td>
+          <td><code>'sm' | 'md' | 'lg'</code></td>
+          <td><code>'md'</code></td>
+          <td>Controls the padding and font size of the button.</td>
+        </tr>
+        <tr>
+          <td><code>[loading]</code></td>
+          <td><code>boolean</code></td>
+          <td><code>true | false</code></td>
+          <td><code>false</code></td>
+          <td>
+            If <code>true</code>, replaces the text with a spinner and disables the button to
+            prevent duplicate API requests.
+          </td>
+        </tr>
+        <tr>
+          <td><code>[disabled]</code></td>
+          <td><code>boolean</code></td>
+          <td><code>true | false</code></td>
+          <td><code>false</code></td>
+          <td>Standard disabled state. User can look, but they cannot touch.</td>
+        </tr>
+        <tr>
+          <td><code>[block]</code></td>
+          <td><code>boolean</code></td>
+          <td><code>true | false</code></td>
+          <td><code>false</code></td>
+          <td>
+            If <code>true</code>, the button ignores its content width and stretches to 100% of its
+            parent container.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

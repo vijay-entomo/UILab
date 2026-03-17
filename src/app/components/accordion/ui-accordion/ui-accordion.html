@@ -1,0 +1,23 @@
+<div
+  ngbAccordion
+  [class]="customClass"
+  [closeOthers]="closeOthers"
+  [attr.data-variant]="variants ? variants : null"
+  [class.hide-arrow]="!showArrow"
+>
+  @for (item of items; track item) {
+    <div ngbAccordionItem [collapsed]="item !== activeItem">
+      <div ngbAccordionHeader>
+        <button ngbAccordionButton>{{ item }}</button>
+      </div>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          <ng-template>
+            Do not touch this. Nobody knows how it works. The original developer lives in the woods
+            now.
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  }
+</div>

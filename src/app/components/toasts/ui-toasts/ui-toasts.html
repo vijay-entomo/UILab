@@ -1,0 +1,47 @@
+<div
+  class="toast-wrap"
+  *ngIf="(toasts$ | async)?.length"
+  [ngClass]="'placement-' + currentPlacement"
+>
+  <div
+    class="toast-content"
+    *ngFor="let t of toasts$ | async; index as i; trackBy: trackByToastId"
+    [style.--index]="i"
+    [class.toast-success]="t.type === 'success'"
+    [class.toast-warning]="t.type === 'warning'"
+    [class.toast-error]="t.type === 'error'"
+    [class.toast-info]="t.type === 'info'"
+    [class.variant-default]="t.variant === 'default'"
+    [class.variant-solid]="t.variant === 'solid'"
+    [class.variant-minimal]="t.variant === 'minimal'"
+    [class.no-icon]="t.showIcon === false"
+    (mouseenter)="toastService.pause(t.id)"
+    (mouseleave)="toastService.resume(t.id)"
+  >
+    <div class="toast-content-section">
+      <div class="toast-icon" *ngIf="t.showIcon !== false"></div>
+
+      <div class="toast-text-content">
+        <div class="toast-title" *ngIf="t.title">{{ t.title }}</div>
+        <div class="toast-subtxt" *ngIf="t.message">{{ t.message }}</div>
+      </div>
+    </div>
+
+    <div class="toast-progress-section" *ngIf="t.showProgress !== false">
+      <div class="toast-progress-text" *ngIf="t.showProgressText !== false">
+        This message will close in
+        {{ t.displayRemaining / 1000 | number: '1.0-0' }}
+        seconds.
+      </div>
+
+      <div class="toast-progress-track">
+        <div class="toast-progress-bar" [style.transform]="'scaleX(' + t.progress + ')'"></div>
+      </div>
+    </div>
+    <button
+      class="toast-close"
+      *ngIf="t.showClose !== false"
+      (click)="toastService.close(t.id)"
+    ></button>
+  </div>
+</div>

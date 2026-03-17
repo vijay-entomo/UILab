@@ -1,0 +1,11 @@
+@if (!isClosed) {
+  <ngb-alert
+    [class]="customClass"
+    [attr.data-variant]="variants ? variants : null"
+    [type]="type"
+    [dismissible]="dismissible"
+    (closed)="onClose()"
+  >
+    <ng-content></ng-content>
+  </ngb-alert>
+}

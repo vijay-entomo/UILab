@@ -1,0 +1,61 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Or however tall you want your hero */
+  background-color: #fafafa; /* Very light off-white background */
+  overflow: hidden;
+}
+
+.grid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  
+  /* Matches the 50px defined in the TypeScript */
+  grid-template-columns: repeat(auto-fill, 50px);
+  grid-template-rows: repeat(auto-fill, 50px);
+  z-index: 1;
+}
+
+.grid-cell {
+  /* Default state: very faint grid line */
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+  
+  /* The slow fade OUT when the mouse leaves */
+  transition: box-shadow 1.2s ease-out;
+
+  &:hover {
+    /* The active state: golden orange border */
+    box-shadow: inset 0 0 0 1px rgba(230, 150, 20, 0.8);
+    
+    /* The instant snap ON when the mouse enters */
+    transition: box-shadow 0s;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Keeps content above the grid */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* CRITICAL: Allows the mouse to "pass through" the empty space 
+     around your text to hit the grid behind it */
+  pointer-events: none; 
+  
+  .content-wrapper {
+    text-align: center;
+    background: white; /* Optional: gives text a solid background to stand out */
+    padding: 2rem 4rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    
+    /* Re-enables clicking for buttons/text inside the wrapper */
+    pointer-events: auto; 
+  }
+}

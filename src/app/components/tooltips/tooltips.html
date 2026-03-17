@@ -1,0 +1,161 @@
+<card-gallery
+  [componentDetails]="selectedComponent"
+  [showImage]="false"
+  [showName]="true"
+  [showDescription]="true"
+  [showLink]="false"
+  customClass="component_page"
+>
+</card-gallery>
+
+<hr class="my-5" />
+
+<div class="whentouse">
+  <div class="h2">Usage Rules</div>
+  <ul class="markdown">
+    <li>Trigger purely on hover or keyboard focus.</li>
+    <li>Explain ambiguous icons or truncated text.</li>
+    <li>Never put interactive elements or links inside.</li>
+    <li>Keep text strictly under five words.</li>
+  </ul>
+</div>
+
+<hr class="my-5" />
+
+<div>
+  <div class="h2 mb-3">Variants</div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">The Compass</p>
+      <p class="text-secondary">
+        <strong>Placements:</strong> Tooltips can be placed on the top, right, bottom, or left of
+        the trigger element.
+      </p>
+    </div>
+    <div class="card-body">
+      <app-ui-tooltips></app-ui-tooltips>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">Rich Content</p>
+      <p class="text-secondary">
+        <strong>HTML Tooltip:</strong> By using an <code>ng-template</code>, you can render complex
+        HTML and inline styles inside the tooltip.
+      </p>
+    </div>
+    <div class="card-body">
+      <ng-template #htmlContent>Greetings! Here is some <b>bold</b> text.</ng-template>
+      <button
+        type="button"
+        class="btn btn-outline-secondary"
+        [ngbTooltip]="htmlContent"
+        placement="right"
+      >
+        Hover for HTML
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="h5">The Rebel</p>
+      <p class="text-secondary">
+        <strong>Custom Class:</strong> Apply a completely unique style via the
+        <code>tooltipClass</code> property.
+      </p>
+    </div>
+    <div class="card-body bg-light">
+      <button
+        type="button"
+        class="btn btn-outline-secondary"
+        placement="top"
+        tooltipClass="bg-primary text-white"
+        ngbTooltip="I have a custom class!"
+      >
+        Custom styled tooltip
+      </button>
+    </div>
+  </div>
+</div>
+
+<hr class="my-5" />
+
+<app-code-copy [content]="dynamicVariable"></app-code-copy>
+
+<hr class="my-5" />
+
+<div>
+  <div>
+    <div class="h2 mb-3">HTML Attributes</div>
+    <div class="table-responsive">
+      <table class="table table-hover attributes_table">
+        <thead>
+          <tr>
+            <th>Prop name</th>
+            <th>Type</th>
+            <th>Accepted Values</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>ngbTooltip</code></td>
+            <td><code>string | TemplateRef</code></td>
+            <td><em>String or inline ng-template</em></td>
+            <td><code>-</code></td>
+            <td>The content to display inside the tooltip.</td>
+          </tr>
+          <tr>
+            <td><code>placement</code></td>
+            <td><code>string</code></td>
+            <td><code>'auto' | 'top' | 'bottom' | 'start' | 'end'</code></td>
+            <td><code>'auto'</code></td>
+            <td>Preferred placement of the tooltip. Use space-separated values for fallbacks.</td>
+          </tr>
+          <tr>
+            <td><code>tooltipClass</code></td>
+            <td><code>string</code></td>
+            <td><em>Any valid CSS class string</em></td>
+            <td><code>''</code></td>
+            <td>A custom CSS class applied directly to the tooltip element.</td>
+          </tr>
+          <tr>
+            <td><code>triggers</code></td>
+            <td><code>string</code></td>
+            <td><code>'hover' | 'focus' | 'click' | 'manual'</code></td>
+            <td><code>'hover focus'</code></td>
+            <td>
+              Events that trigger the tooltip opening and closing. Multiple triggers can be
+              separated by spaces.
+            </td>
+          </tr>
+          <tr>
+            <td><code>openDelay</code> / <code>closeDelay</code></td>
+            <td><code>number</code></td>
+            <td><em>Milliseconds</em></td>
+            <td><code>0</code></td>
+            <td>
+              The delay in milliseconds before opening or closing a tooltip after a trigger event.
+            </td>
+          </tr>
+          <tr>
+            <td><code>container</code></td>
+            <td><code>string</code></td>
+            <td><code>'body'</code></td>
+            <td><code>''</code></td>
+            <td>
+              If set to <code>'body'</code>, appends the tooltip to the body instead of the parent
+              element.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<app-developer-feedback></app-developer-feedback>

@@ -1,0 +1,54 @@
+<div class="feedback-section mt-4 mb-4">
+  <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+    <div>
+      <h3 class="h5 mb-1 fw-bold text-body">Bug Squashing & Feature Dreaming</h3>
+      <div class="text-body-secondary small">Spotted a glitch? Dreaming of a magic new feature? Spill the details below.</div>
+    </div>
+
+    <div class="type-selector d-flex gap-2">
+      <button
+        class="type-btn"
+        (click)="feedbackType = feedbackType === 'bug' ? '' : 'bug'"
+        [class.active]="feedbackType === 'bug'"
+      >
+        🐛 Bug
+      </button>
+      <button
+        class="type-btn"
+        (click)="feedbackType = feedbackType === 'feature' ? '' : 'feature'"
+        [class.active]="feedbackType === 'feature'"
+      >
+        ✨ Feature
+      </button>
+    </div>
+  </div>
+
+  <div class="expandable-container" [class.expanded]="feedbackType !== ''">
+    <div class="expandable-content">
+      <div class="pt-4">
+        <div class="mb-3">
+          <textarea
+            class="form-control developer-input"
+            rows="5"
+            [(ngModel)]="feedbackText"
+            [placeholder]="placeholderText"
+          ></textarea>
+        </div>
+
+        <div class="d-flex justify-content-end">
+          <button
+            class="submit-btn"
+            (click)="submitFeedback()"
+            [disabled]="!feedbackText"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="success-msg text-center mt-3" *ngIf="showThanks">
+    <span class="badge bg-success p-2">🚀 Feedback Sent! Thanks for helping out.</span>
+  </div>
+</div>

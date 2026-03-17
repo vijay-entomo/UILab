@@ -1,0 +1,102 @@
+.feedback-section {
+  border: 1px solid var(--bs-border-color);
+  padding: 24px;
+  border-radius: 12px; /* Sharper, cleaner border-radius to match the design */
+  background-color: var(--bs-body-bg); /* Adapts to theme background */
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03); /* Extremely subtle depth */
+  transition: all 0.3s ease;
+
+  /* Enhanced dark mode support */
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+/* Button Styling (Clean & Modern) */
+.type-btn {
+  background: transparent;
+  border: 1px solid var(--bs-border-color);
+  color: var(--bs-body-color);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(var(--bs-body-color-rgb), 0.05);
+  }
+
+  &.active {
+    background-color: var(--bs-body-color);
+    color: var(--bs-body-bg);
+    border-color: var(--bs-body-color);
+    box-shadow: 0 2px 8px rgba(var(--bs-body-color-rgb), 0.2);
+  }
+}
+
+/* Textarea Styling */
+.developer-input {
+  background-color: transparent;
+  border: 1px solid var(--bs-border-color);
+  color: var(--bs-body-color);
+  border-radius: 8px;
+  resize: vertical;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+
+  &:focus {
+    background-color: transparent;
+    border-color: var(--color-1);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb, 13, 110, 253), 0.15);
+    color: var(--bs-body-color);
+  }
+
+  &::placeholder {
+    color: var(--bs-secondary-color);
+    opacity: 0.7;
+  }
+}
+
+/* Submit Button Styling */
+.submit-btn {
+  background-color: var(--color-1);
+  color: var(--color-2);
+  border: none;
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(var(--bs-primary-rgb, 13, 110, 253), 0.3);
+  }
+}
+
+/* Smooth expansion animation using CSS grid */
+.expandable-container {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother easing curve */
+
+  &.expanded {
+    grid-template-rows: 1fr;
+  }
+}
+
+.expandable-content {
+  overflow: hidden; /* Important: hides the textarea when collapsed */
+}
